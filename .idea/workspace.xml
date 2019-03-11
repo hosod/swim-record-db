@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="153ed408-ccaa-49e0-ba7c-682a1f7ed6b7" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/mysite/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/swimrecord/templates/swimrecord/test.html" beforeDir="false" afterPath="$PROJECT_DIR$/swimrecord/templates/swimrecord/test.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -42,8 +41,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/static/css/swimrecord.css">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="75">
-                  <caret line="5" column="1" lean-forward="true" selection-start-line="5" selection-start-column="1" selection-end-line="5" selection-end-column="1" />
+                <state relative-caret-position="345">
+                  <caret line="23" column="1" lean-forward="true" selection-start-line="23" selection-start-column="1" selection-end-line="23" selection-end-column="1" />
                 </state>
               </provider>
             </entry>
@@ -91,8 +90,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/swimrecord/templates/swimrecord/test.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="105">
-                  <caret line="7" column="120" selection-start-line="7" selection-start-column="120" selection-end-line="7" selection-end-column="120" />
+                <state relative-caret-position="210">
+                  <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
                 </state>
               </provider>
             </entry>
@@ -221,12 +220,12 @@
       <option name="presentableId" value="Default" />
       <updated>1551786195805</updated>
       <workItem from="1551786197359" duration="2359000" />
-      <workItem from="1552292034535" duration="4573000" />
+      <workItem from="1552292034535" duration="4811000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="6932000" />
+    <option name="totallyTimeSpent" value="7170000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -376,15 +375,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/static/css/swimrecord.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="1" lean-forward="true" selection-start-line="5" selection-start-column="1" selection-end-line="5" selection-end-column="1" />
+        <state relative-caret-position="345">
+          <caret line="23" column="1" lean-forward="true" selection-start-line="23" selection-start-column="1" selection-end-line="23" selection-end-column="1" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/swimrecord/templates/swimrecord/test.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="120" selection-start-line="7" selection-start-column="120" selection-end-line="7" selection-end-column="120" />
+        <state relative-caret-position="210">
+          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
         </state>
       </provider>
     </entry>
