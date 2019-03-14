@@ -5,8 +5,7 @@
 <div class="info">
     <h1>氏名:{{ object.name }}</h1>
     <ul>
-{#        <li>所属:<a href="{% url 'team_detail' pk=object.team.pk %}">{{ object.team.name }}</a></li>#}
-        <li>所属:{{ object.team.name }}</li>
+        <li>所属:<a href="{% url 'team_detail' pk=object.team.pk %}">{{ object.team.name }}</a></li>
         <li>学年:{{ object.grade }}</li>
     </ul>
 </div>

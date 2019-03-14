@@ -92,6 +92,19 @@ class SwimmerDetailView(DetailView):
         return deviation
 
 
+class TeamDetailView(DetailView):
+    model = Team
+
+    def get_context_data(self, **kwargs):
+        context = super(TeamDetailView, self).get_context_data(**kwargs)
+
+        swimmers = Swimmer.objects.filter(team__pk=context['team'].pk)
+        swimmers = swimmers.order_by('grade').reverse()
+        context['swimmers'] = swimmers
+
+        return context
+
+
 class TestView(TemplateView):
     template_name = 'swimrecord/test.html'
 
