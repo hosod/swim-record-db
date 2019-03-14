@@ -1,0 +1,78 @@
+{% extends 'swimrecord/_base.html' %}
+{% load custom_filter %}
+
+{% block content %}
+<form method="get" action="" name="filter_form">
+    <h1>Search</h1>
+    <div class="search-label-icon">
+        <label for="sel_event">種目:</label>
+        <select name="events" id="sel_event" size="5" multiple>
+            {% for event in events %}
+                <option value="{{ event.pk }}"
+                        {{ event.pk|checked:request.GET }}
+                    >{{ event.name }}
+                </option>
+            {% endfor %}
+        </select>
+
+        <label for="sel_team">所属:</label>
+        <select name="teams" id="sel_team" size="5" multiple>
+            {% for team in teams %}
+                <option value="{{ team.pk }}"
+                        {{ team.pk|checked:request.GET }}
+                    >{{ team.name }}
+                </option>
+            {% endfor %}
+        </select>
+
+        <label for="sel_meeting">大会:</label>
+        <select name="meetings" id="sel_meeting" size="5" multiple>
+            {% for meeting in meetings %}
+                <option value="{{ meeting.pk }}"
+                        {{ meeting.pk|checked:request.GET }}
+                    >{{ meeting.name }}
+                </option>
+            {% endfor %}
+        </select>
+    </div>
+    <div>
+        <label for="name">氏名</label>
+        <input type="search"
+               id="name"
+               name="name"
+               placeholder="氏名"
+               value={{ request.GET|name }}
+        >
+        <button id="filter">絞り込み</button>
+    </div>
+</form>
+<table class="content container">
+    <tbody>
+        <tr>
+            <td>#</td>
+            <td>氏名</td>
+            <td>所属</td>
+            <td>種目</td>
+            <td>記録</td>
+            <td>大会</td>
+        </tr>
+        {% for record in object_list %}
+            <tr>
+                <td>{{ forloop.counter }}</td>
+                <td>{{ record.swimmer.name }}</td>
+                <td>{{ record.swimmer.team.name }}</td>
+                <td>{{ record.event.name }}</td>
+{#                <td><a href="{% url 'swimmer_detail' pk=record.swimmer.pk %}">{{ record.swimmer.name }}</a></td>#}
+{#                <td><a href="{% url 'team_detail' pk=record.swimmer.team.pk %}">{{ record.swimmer.team.name }}</a></td>#}
+{#                <td><a href="{% url  'event_detail' pk=record.event.pk %}">{{ record.event.name }}</a></td>#}
+                <td>{{ record.record|time_to_str }}</td>
+                <td>{{ record.meeting.name }}</td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+<br>
+
+{% include 'swimrecord/_pagination.html'%}
+
+{% endblock %}

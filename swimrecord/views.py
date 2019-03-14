@@ -5,12 +5,12 @@ from .models import Record, Meeting, Team, Event
 
 
 # Create your views here.
-class HomeView(PaginationMixin, ListView):
+class RecordListView(PaginationMixin, ListView):
     model = Record
     paginate_by = 40
 
     def get_context_data(self, **kwargs):
-        context = super(HomeView, self).get_context_data(**kwargs)
+        context = super(RecordListView, self).get_context_data(**kwargs)
 
         teams = Team.objects.all()
         meetings = Meeting.objects.all()
@@ -26,7 +26,7 @@ class HomeView(PaginationMixin, ListView):
 
         q_name = self.request.GET.get('name')
         q_events = self.request.GET.getlist('events')
-        q_meetings = self.request.GET.get('meetings')
+        q_meetings = self.request.GET.getlist('meetings')
         q_teams = self.request.GET.getlist('teams')
 
         if len(q_events) != 0:

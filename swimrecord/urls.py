@@ -1,8 +1,9 @@
 from django.conf.urls import url
-from .views import HomeView, TestView
+from .views import RecordListView, TestView
 
 
 urlpatterns = [
-    url(r'^$', HomeView.as_view(), name="home"),
+    url(r'^$', RecordListView.as_view(), name="record_list"),
+
     url(r'test/', TestView.as_view(), name='css_test'),
 ]
