@@ -59,12 +59,12 @@
         {% for record in object_list %}
             <tr>
                 <td>{{ forloop.counter }}</td>
-                <td>{{ record.swimmer.name }}</td>
-                <td>{{ record.swimmer.team.name }}</td>
-                <td>{{ record.event.name }}</td>
-{#                <td><a href="{% url 'swimmer_detail' pk=record.swimmer.pk %}">{{ record.swimmer.name }}</a></td>#}
+
+                <td><a href="{% url 'swimmer_detail' pk=record.swimmer.pk %}">{{ record.swimmer.name }}</a></td>
 {#                <td><a href="{% url 'team_detail' pk=record.swimmer.team.pk %}">{{ record.swimmer.team.name }}</a></td>#}
 {#                <td><a href="{% url  'event_detail' pk=record.event.pk %}">{{ record.event.name }}</a></td>#}
+                <td>{{ record.swimmer.team.name }}</td>
+                <td>{{ record.event.name }}</td>
                 <td>{{ record.record|time_to_str }}</td>
                 <td>{{ record.meeting.name }}</td>
             </tr>

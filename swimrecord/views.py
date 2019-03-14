@@ -1,7 +1,9 @@
-from django.shortcuts import render
-from django.views.generic import TemplateView, ListView
+from django.views.generic import TemplateView, ListView, DetailView
 from pure_pagination import PaginationMixin
-from .models import Record, Meeting, Team, Event
+from django.db import models
+from .models import Record, Meeting, Team, Event, Swimmer
+from statistics import mean, stdev
+from decimal import Decimal
 
 
 # Create your views here.
@@ -40,6 +42,54 @@ class RecordListView(PaginationMixin, ListView):
             results = results.filter(swimmer__name__contains=q_name)
 
         return results
+
+
+class SwimmerDetailView(DetailView):
+    model = Swimmer
+    records = Record.objects.filter(record__lt=5000)
+    events = Event.objects.all()
+
+    def get_context_data(self, **kwargs):
+        context = super(SwimmerDetailView, self).get_context_data(**kwargs)
+
+        data = {}
+        data['long'] = self.__get_data(is_long=True, swimmer_pk=context['swimmer'].pk)
+        data['short'] = self.__get_data(is_long=False, swimmer_pk=context['swimmer'].pk)
+
+        history = self.records.filter(swimmer__pk=context['swimmer'].pk).order_by('meeting__date')
+
+        context['history'] = history
+        context['data'] = data
+
+        return context
+
+    def __get_data(self, is_long, swimmer_pk):
+        data = []
+        for event in self.events:
+            best = self.records.filter(event__pk=event.pk).filter(meeting__is_long=is_long)
+            best = best.filter(swimmer__pk=swimmer_pk).order_by('record').first()
+
+            if best is None:
+                continue
+            else:
+                ranking = self.records.filter(event__pk=event.pk).filter(meeting__is_long=is_long)
+                ranking = ranking.values('swimmer__name').annotate(models.Min('record'))
+                ranking = ranking.values_list('record__min')
+                deviation = self.__get_deviation(ranking, best)
+                data.append({'best': best, 'deviation': deviation})
+        return data
+
+    # rankingはstr型の記録のリスト
+    # recordもstr型の記録
+    @staticmethod
+    def __get_deviation(ranking, record):
+        ranking = list(map((lambda x: float(x[0])), ranking))
+        avg = mean(ranking)
+        std_ev = stdev(ranking)
+
+        deviation = 50.0 - ((float(record.record) - avg) / std_ev) * 10.0
+        deviation = Decimal(deviation).quantize(Decimal('0.01'))
+        return deviation
 
 
 class TestView(TemplateView):
