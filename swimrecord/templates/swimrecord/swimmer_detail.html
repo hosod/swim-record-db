@@ -12,29 +12,6 @@
     <br>
 <div class="content">
     <h2>Best</h2>
-    <h3>短水路</h3>
-    <table class="short">
-        <tbody>
-            <tr>
-                <td>種目</td>
-                <td>記録</td>
-                <td>偏差値</td>
-                <td>大会</td>
-            </tr>
-            {% for record in data.short %}
-                <tr>
-{#                    <td><a href="{% url 'event_detail' pk=record.best.event.pk %}">{{ record.best.event.name }}</a></td>#}
-                    <td>{{ record.best.event.name }}</td>
-                    <td>{{ record.best.record|time_to_str }}</td>
-                    <td>{{ record.deviation }}</td>
-                    <td>{{ record.best.meeting.name }}</td>
-                </tr>
-            {% endfor %}
-        </tbody>
-    </table>
-
-    <br>
-
     <h3>長水路</h3>
     <table class="long">
         <tbody>
@@ -46,13 +23,34 @@
         </tr>
         {% for record in data.long %}
             <tr>
-{#                <td><a href="{% url 'event_detail' pk=record.best.event.pk %}">{{ record.best.event.name }}</a></td>#}
-                <td>{{ record.best.event.name }}</td>
+                <td><a href="{% url 'event_detail' pk=record.best.event.pk %}">{{ record.best.event.name }}</a></td>
                 <td>{{ record.best.record|time_to_str }}</td>
                 <td>{{ record.deviation }}</td>
                 <td>{{ record.best.meeting.name }}</td>
             </tr>
         {% endfor %}
+        </tbody>
+    </table>
+
+    <br>
+
+    <h3>短水路</h3>
+    <table class="short">
+        <tbody>
+            <tr>
+                <td>種目</td>
+                <td>記録</td>
+                <td>偏差値</td>
+                <td>大会</td>
+            </tr>
+            {% for record in data.short %}
+                <tr>
+                    <td><a href="{% url 'event_detail' pk=record.best.event.pk %}">{{ record.best.event.name }}</a></td>
+                    <td>{{ record.best.record|time_to_str }}</td>
+                    <td>{{ record.deviation }}</td>
+                    <td>{{ record.best.meeting.name }}</td>
+                </tr>
+            {% endfor %}
         </tbody>
     </table>
 
@@ -67,9 +65,8 @@
         </tr>
         {% for record in history %}
             <tr>
-{#                <td><a href="{% url 'event_detail' pk=record.event.pk %}">{{ record.event.name }}</a></td>#}
-                <td>{{ record.event.name }}</td>
-                <td>{{ record.record }}</td>
+                <td><a href="{% url 'event_detail' pk=record.event.pk %}">{{ record.event.name }}</a></td>
+                <td>{{ record.record|time_to_str }}</td>
                 <td>{{ record.meeting.name }}</td>
             </tr>
         {% endfor %}

@@ -1,0 +1,56 @@
+{% extends 'swimrecord/_base.html' %}
+{% load custom_filter %}
+
+{% block content %}
+<div class="top">
+    <h1>{{ object.name }}</h1>
+</div>
+    <br>
+<div class="content">
+
+    <h2>長水路</h2>
+    <table class="timelist">
+        <tbody>
+            <tr>
+                <td>#</td>
+                <td>氏名</td>
+                <td>所属</td>
+                <td>記録</td>
+                <td>偏差値</td>
+            </tr>
+            {% for record in data.long %}
+                <tr>
+                    <td>{{ forloop.counter }}</td>
+                    <td><a href="{% url 'swimmer_detail' pk=record.swimmer_pk %}">{{ record.swimmer_name }}</a></td>
+                    <td><a href="{% url 'team_detail' pk=record.team.pk %}">{{ record.team.name }}</a></td>
+                    <td>{{ record.record }}</td>
+                    <td>{{ record.deviation }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <br>
+    <h2>短水路</h2>
+    <table>
+        <tbody>
+            <tr>
+                <td>#</td>
+                <td>氏名</td>
+                <td>所属</td>
+                <td>記録</td>
+                <td>偏差値</td>
+            </tr>
+            {% for record in data.short %}
+                <tr>
+                    <td>{{ forloop.counter }}</td>
+                    <td><a href="{% url 'swimmer_detail' pk=record.swimmer_pk %}">{{ record.swimmer_name }}</a></td>
+                    <td><a href="{% url 'team_detail' pk=record.team.pk %}">{{ record.team.name }}</a></td>
+                    <td>{{ record.record }}</td>
+                    <td>{{ record.deviation }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+    <br><br>
+{% endblock %}

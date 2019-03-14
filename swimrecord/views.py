@@ -105,6 +105,47 @@ class TeamDetailView(DetailView):
         return context
 
 
+class EventDetailView(DetailView):
+    model = Event
+
+    def get_context_data(self, **kwargs):
+        context = super(EventDetailView, self).get_context_data(**kwargs)
+        data = {}
+        data['long'] = self.__get_data(is_long=True)
+        data['short'] = self.__get_data(is_long=False)
+        context['data'] = data
+
+        return context
+
+    def __get_data(self, is_long):
+        ranking = Record.objects.filter(event__pk=self.kwargs['pk']).filter(record__lt=5000)
+        ranking = ranking.filter(meeting__is_long=is_long)
+        ranking = ranking.values('swimmer__name').annotate(models.Min('record')).order_by('record__min')
+
+        data = []
+        for record in ranking:
+            deviation = self.__get_deviation(ranking, record['record__min'])
+            swimmer = Swimmer.objects.get(name=record['swimmer__name'])
+            data.append({'swimmer_name': record['swimmer__name'],
+                         'swimmer_pk': swimmer.pk,
+                         'team': swimmer.team,
+                         'record': record['record__min'],
+                         'deviation': deviation
+                         })
+        return data
+
+    @staticmethod
+    def __get_deviation(ranking, record):
+        ranking = ranking.values_list('record__min')
+        ranking = list(map((lambda x: float(x[0])), ranking))
+        avg = mean(ranking)
+        std_ev = stdev(ranking)
+
+        deviation = 50.0 - ((float(record) - avg) / std_ev) * 10.0
+        deviation = Decimal(deviation).quantize(Decimal('0.01'))
+        return deviation
+
+
 class TestView(TemplateView):
     template_name = 'swimrecord/test.html'
 
