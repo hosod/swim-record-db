@@ -14,7 +14,7 @@ class Meeting(models.Model):
     #     self.save()
 
     def __str__(self):
-        return self.name
+        return self.name + '(' + str(self.date) + ')'
 
 
 class Team(models.Model):

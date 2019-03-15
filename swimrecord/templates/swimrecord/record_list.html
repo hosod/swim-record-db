@@ -60,11 +60,11 @@
             <tr>
                 <td>{{ forloop.counter }}</td>
 
-                <td><a href="{% url 'swimmer_detail' pk=record.swimmer.pk %}">{{ record.swimmer.name }}</a></td>
-                <td><a href="{% url 'team_detail' pk=record.swimmer.team.pk %}">{{ record.swimmer.team.name }}</a></td>
-                <td><a href="{% url  'event_detail' pk=record.event.pk %}">{{ record.event.name }}</a></td>
+                <td><a href="{% url 'swimmer_detail' pk=record.swimmer.pk %}">{{ record.swimmer }}</a></td>
+                <td><a href="{% url 'team_detail' pk=record.swimmer.team.pk %}">{{ record.swimmer.team }}</a></td>
+                <td><a href="{% url  'event_detail' pk=record.event.pk %}">{{ record.event }}</a></td>
                 <td>{{ record.record|time_to_str }}</td>
-                <td>{{ record.meeting.name }}</td>
+                <td><a href="{% url 'meeting_event' pk=record.meeting.pk event_pk=record.event.pk %}">{{ record.meeting }}</a></td>
             </tr>
         {% endfor %}
     </tbody>

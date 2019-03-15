@@ -56,7 +56,7 @@ class SwimmerDetailView(DetailView):
         data['long'] = self.__get_data(is_long=True, swimmer_pk=context['swimmer'].pk)
         data['short'] = self.__get_data(is_long=False, swimmer_pk=context['swimmer'].pk)
 
-        history = self.records.filter(swimmer__pk=context['swimmer'].pk).order_by('meeting__date')
+        history = self.records.filter(swimmer__pk=context['swimmer'].pk).order_by('meeting__date').reverse()
 
         context['history'] = history
         context['data'] = data
@@ -144,6 +144,35 @@ class EventDetailView(DetailView):
         deviation = 50.0 - ((float(record) - avg) / std_ev) * 10.0
         deviation = Decimal(deviation).quantize(Decimal('0.01'))
         return deviation
+
+
+class MeetingDetailView(PaginationMixin, DetailView):
+    model = Meeting
+
+    def get_context_data(self, **kwargs):
+        context = super(MeetingDetailView, self).get_context_data(**kwargs)
+        meeting_events = context['meeting'].records.values('event__name').distinct()
+        meeting_events = Event.objects.filter(name__in=meeting_events)
+        context['events'] = meeting_events
+        return context
+
+
+class MeetingEventView(DetailView):
+    model = Meeting
+    template_name = 'swimrecord/meeting_event.html'
+
+    def get_context_data(self, **kwargs):
+        context = super(MeetingEventView, self).get_context_data(**kwargs)
+
+        event = Event.objects.get(pk=self.kwargs['event_pk'])
+
+        records = Record.objects.filter(event__pk=self.kwargs['event_pk'])
+        records = records.filter(meeting__pk=self.kwargs['pk'])
+        records = records.order_by('record')
+
+        context['records'] = records
+        context['event'] = event
+        return context
 
 
 class TestView(TemplateView):

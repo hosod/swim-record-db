@@ -1,0 +1,26 @@
+{% extends 'swimrecord/_base.html' %}
+{% load custom_filter %}
+
+{% block content %}
+    <div>
+        <h2>{{ object.name }}</h2>
+        <p class="date">{{ object.date }}</p>
+    </div>
+    <br><br>
+
+    <div class="content">
+        <table width="40%">
+            <tr>
+                <td>#</td>
+                <td>種目</td>
+            </tr>
+            {% for event in events %}
+                <tr>
+                    <td>{{ forloop.counter }}</td>
+                    <td><a href="{% url 'meeting_event' pk=object.pk event_pk=event.pk %}">{{ event.name }}</a></td>
+                </tr>
+            {% endfor %}
+        </table>
+    </div>
+    <br><br>
+{% endblock %}

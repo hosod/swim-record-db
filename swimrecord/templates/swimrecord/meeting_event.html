@@ -1,0 +1,29 @@
+{% extends 'swimrecord/_base.html' %}
+{% load custom_filter %}
+
+{% block content %}
+<div>
+    <h2>{{ object.name }}: {{ event.name }}</h2>
+    <p class="date">{{ object.date }}</p>
+</div>
+    <br><br>
+<div class="content">
+<table>
+    <tr>
+        <td>#</td>
+        <td>氏名</td>
+        <td>所属</td>
+        <td>記録</td>
+    </tr>
+    {% for record in records %}
+        <tr>
+            <td>{{ forloop.counter }}</td>
+            <td><a href="{% url 'swimmer_detail' pk=record.swimmer.pk %}">{{ record.swimmer.name }}</a></td>
+            <td><a href="{% url 'team_detail' pk=record.swimmer.team.pk %}">{{ record.swimmer.team.name }}</a></td>
+            <td>{{ record.record|time_to_str }}</td>
+        </tr>
+    {% endfor %}
+</table>
+</div>
+    <br><br>
+{% endblock %}

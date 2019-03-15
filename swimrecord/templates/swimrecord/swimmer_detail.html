@@ -23,10 +23,10 @@
         </tr>
         {% for record in data.long %}
             <tr>
-                <td><a href="{% url 'event_detail' pk=record.best.event.pk %}">{{ record.best.event.name }}</a></td>
+                <td><a href="{% url 'event_detail' pk=record.best.event.pk %}">{{ record.best.event }}</a></td>
                 <td>{{ record.best.record|time_to_str }}</td>
                 <td>{{ record.deviation }}</td>
-                <td>{{ record.best.meeting.name }}</td>
+                <td><a href="{% url 'meeting_event' pk=record.best.meeting.pk event_pk=record.best.event.pk %}">{{ record.best.meeting }}</a></td>
             </tr>
         {% endfor %}
         </tbody>
@@ -45,10 +45,10 @@
             </tr>
             {% for record in data.short %}
                 <tr>
-                    <td><a href="{% url 'event_detail' pk=record.best.event.pk %}">{{ record.best.event.name }}</a></td>
+                    <td><a href="{% url 'event_detail' pk=record.best.event.pk %}">{{ record.best.event }}</a></td>
                     <td>{{ record.best.record|time_to_str }}</td>
                     <td>{{ record.deviation }}</td>
-                    <td>{{ record.best.meeting.name }}</td>
+                    <td><a href="{% url 'meeting_event' pk=record.best.meeting.pk event_pk=record.best.event.pk %}">{{ record.best.meeting }}</a></td>
                 </tr>
             {% endfor %}
         </tbody>
@@ -65,9 +65,9 @@
         </tr>
         {% for record in history %}
             <tr>
-                <td><a href="{% url 'event_detail' pk=record.event.pk %}">{{ record.event.name }}</a></td>
+                <td><a href="{% url 'event_detail' pk=record.event.pk %}">{{ record.event }}</a></td>
                 <td>{{ record.record|time_to_str }}</td>
-                <td>{{ record.meeting.name }}</td>
+                <td><a href="{% url 'meeting_event' pk=record.meeting.pk event_pk=record.event.pk %}">{{ record.meeting }}</a></td>
             </tr>
         {% endfor %}
     </table>
