@@ -22,7 +22,7 @@
                     <td>{{ forloop.counter }}</td>
                     <td><a href="{% url 'swimmer_detail' pk=record.swimmer_pk %}">{{ record.swimmer_name }}</a></td>
                     <td><a href="{% url 'team_detail' pk=record.team.pk %}">{{ record.team.name }}</a></td>
-                    <td>{{ record.record }}</td>
+                    <td>{{ record.record|time_to_str }}</td>
                     <td>{{ record.deviation }}</td>
                 </tr>
             {% endfor %}
@@ -44,7 +44,7 @@
                     <td>{{ forloop.counter }}</td>
                     <td><a href="{% url 'swimmer_detail' pk=record.swimmer_pk %}">{{ record.swimmer_name }}</a></td>
                     <td><a href="{% url 'team_detail' pk=record.team.pk %}">{{ record.team.name }}</a></td>
-                    <td>{{ record.record }}</td>
+                    <td>{{ record.record|time_to_str }}</td>
                     <td>{{ record.deviation }}</td>
                 </tr>
             {% endfor %}

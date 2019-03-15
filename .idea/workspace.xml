@@ -2,16 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="153ed408-ccaa-49e0-ba7c-682a1f7ed6b7" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/static/css/swimrecord.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/swimrecord.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/swimrecord/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/swimrecord/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/swimrecord/templates/swimrecord/_base.html" beforeDir="false" afterPath="$PROJECT_DIR$/swimrecord/templates/swimrecord/_base.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/swimrecord/templates/swimrecord/event_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/swimrecord/templates/swimrecord/event_detail.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/swimrecord/templates/swimrecord/record_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/swimrecord/templates/swimrecord/record_list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/swimrecord/templates/swimrecord/swimmer_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/swimrecord/templates/swimrecord/swimmer_detail.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/swimrecord/templates/swimrecord/team_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/swimrecord/templates/swimrecord/team_detail.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/swimrecord/templates/swimrecord/test.html" beforeDir="false" afterPath="$PROJECT_DIR$/swimrecord/templates/swimrecord/test.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/swimrecord/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/swimrecord/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/swimrecord/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/swimrecord/views.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -26,8 +17,17 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/swimrecord/templates/swimrecord/_base.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="195">
-                  <caret line="15" column="90" selection-start-line="15" selection-start-column="90" selection-end-line="15" selection-end-column="90" />
+                <state relative-caret-position="201">
+                  <caret line="15" column="30" selection-start-line="15" selection-start-column="30" selection-end-line="15" selection-end-column="30" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/swimrecord/templates/swimrecord/event_detail.html">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="300">
+                  <caret line="46" column="52" selection-start-line="46" selection-start-column="52" selection-end-line="46" selection-end-column="52" />
                 </state>
               </provider>
             </entry>
@@ -44,7 +44,7 @@
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="true">
+          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/swimrecord/templates/swimrecord/meeting_list.html">
               <provider selected="true" editor-type-id="text-editor" />
             </entry>
@@ -157,8 +157,6 @@
         <option value="$PROJECT_DIR$/swimrecord/templates/swimrecord/_pagination.html" />
         <option value="$PROJECT_DIR$/swimrecord/templates/swimrecord/test.html" />
         <option value="$PROJECT_DIR$/static/css/swimrecord.css" />
-        <option value="$PROJECT_DIR$/swimrecord/templates/swimrecord/_base.html" />
-        <option value="$PROJECT_DIR$/swimrecord/templates/swimrecord/event_detail.html" />
         <option value="$PROJECT_DIR$/swimrecord/urls.py" />
         <option value="$PROJECT_DIR$/swimrecord/templates/swimrecord/meeting_detail.html" />
         <option value="$PROJECT_DIR$/swimrecord/templates/swimrecord/meeting_event.html" />
@@ -167,6 +165,8 @@
         <option value="$PROJECT_DIR$/swimrecord/templates/swimrecord/swimmer_detail.html" />
         <option value="$PROJECT_DIR$/swimrecord/views.py" />
         <option value="$PROJECT_DIR$/swimrecord/templates/swimrecord/record_list.html" />
+        <option value="$PROJECT_DIR$/swimrecord/templates/swimrecord/_base.html" />
+        <option value="$PROJECT_DIR$/swimrecord/templates/swimrecord/event_detail.html" />
       </list>
     </option>
   </component>
@@ -287,12 +287,12 @@
       <option name="presentableId" value="Default" />
       <updated>1551786195805</updated>
       <workItem from="1551786197359" duration="2359000" />
-      <workItem from="1552292034535" duration="46178000" />
+      <workItem from="1552292034535" duration="46317000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="48537000" />
+    <option name="totallyTimeSpent" value="48676000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -515,20 +515,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/swimrecord/templates/swimrecord/event_detail.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="424">
-          <caret line="35" column="22" selection-start-line="35" selection-start-column="22" selection-end-line="35" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/swimrecord/templates/swimrecord/_base.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="15" column="90" selection-start-line="15" selection-start-column="90" selection-end-line="15" selection-end-column="90" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/swimrecord/templates/swimrecord/swimmer_detail.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="961">
@@ -572,6 +558,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/swimrecord/templates/swimrecord/meeting_list.html">
       <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/swimrecord/templates/swimrecord/_base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="201">
+          <caret line="15" column="30" selection-start-line="15" selection-start-column="30" selection-end-line="15" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/swimrecord/templates/swimrecord/event_detail.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="46" column="52" selection-start-line="46" selection-start-column="52" selection-end-line="46" selection-end-column="52" />
+        </state>
+      </provider>
     </entry>
   </component>
 </project>
