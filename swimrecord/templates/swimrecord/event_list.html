@@ -1,0 +1,23 @@
+{% extends 'swimrecord/_base.html' %}
+
+{% block content %}
+<div>
+    <h2>種目別ランキング</h2>
+</div>
+    <br>
+<div class="content">
+<table>
+    <tr>
+        <td>#</td>
+        <td>種目</td>
+    </tr>
+    {% for event in object_list %}
+        <tr>
+            <td>{{ forloop.counter }}</td>
+            <td><a href="{% url 'event_detail' pk=event.pk %}">{{ event }}</a></td>
+        </tr>
+    {% endfor %}
+</table>
+</div>
+    <br><br>
+{% endblock %}

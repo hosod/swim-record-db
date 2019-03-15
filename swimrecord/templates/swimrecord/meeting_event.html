@@ -5,6 +5,12 @@
 <div>
     <h2>{{ object.name }}: {{ event.name }}</h2>
     <p class="date">{{ object.date }}</p>
+    {% if object.is_long %}
+        <p class="date">長水路</p>
+    {% else %}
+        <p class="date">短水路</p>
+    {% endif %}
+
 </div>
     <br><br>
 <div class="content">

@@ -1,0 +1,47 @@
+{% extends 'swimrecord/_base.html' %}
+{% load custom_filter %}
+
+{% block content %}
+<div>
+    <h2>大会一覧</h2>
+</div>
+    <br>
+<div class="content">
+<h3>長水路</h3>
+<table class="long">
+    <tr>
+        <td>#</td>
+        <td>大会</td>
+        <td>日程</td>
+    </tr>
+    {% for meeting in object_list %}
+        {% if meeting.is_long %}
+            <tr>
+                <td>{{ forloop.counter }}</td>
+                <td><a href="{% url 'meeting_detail' pk=meeting.pk %}">{{ meeting.name }}</a></td>
+                <td>{{ meeting.date }}</td>
+            </tr>
+        {% endif %}
+    {% endfor %}
+</table>
+<br>
+<h3>短水路</h3>
+<table class="short">
+    <tr>
+        <td>#</td>
+        <td>大会</td>
+        <td>日程</td>
+    </tr>
+    {% for meeting in object_list %}
+        {% if not meeting.is_long %}
+            <tr>
+                <td>{{ forloop.counter }}</td>
+                <td><a href="{% url 'meeting_detail' pk=meeting.pk %}">{{ meeting.name }}</a></td>
+                <td>{{ meeting.date }}</td>
+            </tr>
+        {% endif %}
+    {% endfor %}
+</table>
+</div>
+    <br><br>
+{% endblock %}

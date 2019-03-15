@@ -175,6 +175,31 @@ class MeetingEventView(DetailView):
         return context
 
 
+class MeetingListView(ListView):
+    model = Meeting
+
+    def get_context_data(self, **kwargs):
+        context = super(MeetingListView, self).get_context_data(**kwargs)
+
+        return context
+
+
+class TeamListView(ListView):
+    model = Team
+
+    def get_context_data(self, **kwargs):
+        context = super(TeamListView, self).get_context_data(**kwargs)
+        return context
+
+
+class EventListView(ListView):
+    model = Event
+
+    def get_context_data(self, **kwargs):
+        context = super(EventListView, self).get_context_data(**kwargs)
+        return context
+
+
 class TestView(TemplateView):
     template_name = 'swimrecord/test.html'
 
