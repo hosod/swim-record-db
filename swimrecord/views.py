@@ -176,10 +176,16 @@ class MeetingEventView(DetailView):
 
 
 class MeetingListView(ListView):
-    model = Meeting
+    queryset = Meeting.objects.all().order_by('date').reverse()
 
     def get_context_data(self, **kwargs):
         context = super(MeetingListView, self).get_context_data(**kwargs)
+
+        data = {}
+        data['long'] = self.queryset.filter(is_long=True)
+        data['short'] = self.queryset.filter(is_long=False)
+
+        context['data'] = data
 
         return context
 

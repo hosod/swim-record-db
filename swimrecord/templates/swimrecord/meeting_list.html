@@ -14,7 +14,7 @@
         <td>大会</td>
         <td>日程</td>
     </tr>
-    {% for meeting in object_list %}
+    {% for meeting in data.long %}
         {% if meeting.is_long %}
             <tr>
                 <td>{{ forloop.counter }}</td>
@@ -32,7 +32,7 @@
         <td>大会</td>
         <td>日程</td>
     </tr>
-    {% for meeting in object_list %}
+    {% for meeting in data.short %}
         {% if not meeting.is_long %}
             <tr>
                 <td>{{ forloop.counter }}</td>
