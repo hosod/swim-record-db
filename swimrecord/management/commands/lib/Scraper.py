@@ -53,8 +53,9 @@ class Scraper:
 
     # 試合の名前を引数にしてDBに存在するかどうかを返す　
     @staticmethod
-    def __meeting_exists_in_database(meeting_name):
+    def __meeting_exists_in_database(meeting_name, date):
         meetings = Meeting.objects.filter(name__exact=meeting_name)
+        meetings = Meeting.objects.filter(date=date)
         if meetings.count() == 0:
             return False
         else:
@@ -87,7 +88,7 @@ class Scraper:
     # ただし、すでに存在していた場合はFalseを返して終了
     @staticmethod
     def __set_meeting(name, date, is_long, url):
-        if Scraper.__meeting_exists_in_database(name):
+        if Scraper.__meeting_exists_in_database(name, date):
             # 受け取った試合のデータがすでにDBに格納されている時
             return False
         else:
@@ -95,22 +96,31 @@ class Scraper:
             Meeting.objects.create(name=name, date=date, is_long=is_long, url=url)
             return True
 
-    @staticmethod
-    def set_meeting(meeting_url, is_long):
+    def set_meeting(self, meeting_url):
         html = urlopen(meeting_url)
         bsObj = BeautifulSoup(html, 'html.parser')
         header = bsObj.find(class_='headder')
+        print(header)
         table = header.find('table')
         rows = table.findAll('tr')
+        if '長水路' in rows[1].text:
+            is_long = True
+        else:
+            is_long = False
         name = rows[1].text.split(':')[1]
         name = name.split('\u3000')[0]
         date_str = rows[0].text.split(' ')[0].replace('\n', '')
         date_dt = datetime.datetime.strptime(date_str, '%Y/%m/%d')
         date_dt = datetime.date(year=date_dt.year, month=date_dt.month, day=date_dt.day)
 
+        flag = Scraper.__set_meeting(name=name, date=date_dt, is_long=is_long, url=meeting_url)
 
-
-
+        if flag:
+            # DBにレコードを挿入した時
+            meeting = Meeting.objects.get(name=name)
+            self.set_record(meeting)
+        else:
+            pass
 
     # 指定年度(hosted_year)の学連の試合情報をまとめてDBに挿入
     # また、挿入できたMeetingのレコードのlistを返す
@@ -171,15 +181,18 @@ class Scraper:
     # result_meeting: [Swimmer.name, Team.name, Event.name, record, grade]のlist
     def set_record(self, meeting):
         result_meeting = self.__scrape_result_of_meeting(meeting)
+        counter = 0
         for row in result_meeting:
             swimmer = self.__set_swimmer(name=row[0], team_name=row[1], grade=row[4])
             if swimmer is not None:
                 event = Event.objects.get(name=row[2])
                 Scraper.__set_record(swimmer, meeting, event, record=row[3])
+                counter += 1
             else:
                 # swimmerが2部の大学の選手でない、
                 # またはデータが必要のない学年で、__set_swimmerがNoneを返した時
                 continue
+        print(counter)
 
     # target_argのなかにTeamの要素があるかどうかを判定
     @staticmethod
