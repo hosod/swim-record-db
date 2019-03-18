@@ -58,6 +58,7 @@ class Scraper:
         if meetings.count() == 0:
             return False
         else:
+            meetings = meetings.filter()
             return True
 
     # meeting list からすでに試合結果が掲載されている試合情報をスクレイピングする
@@ -94,9 +95,22 @@ class Scraper:
             Meeting.objects.create(name=name, date=date, is_long=is_long, url=url)
             return True
 
-    # @staticmethod
-    # def set_meeting():
-    #     meeting_list =
+    @staticmethod
+    def set_meeting(meeting_url, is_long):
+        html = urlopen(meeting_url)
+        bsObj = BeautifulSoup(html, 'html.parser')
+        header = bsObj.find(class_='headder')
+        table = header.find('table')
+        rows = table.findAll('tr')
+        name = rows[1].text.split(':')[1]
+        name = name.split('\u3000')[0]
+        date_str = rows[0].text.split(' ')[0].replace('\n', '')
+        date_dt = datetime.datetime.strptime(date_str, '%Y/%m/%d')
+        date_dt = datetime.date(year=date_dt.year, month=date_dt.month, day=date_dt.day)
+
+
+
+
 
     # 指定年度(hosted_year)の学連の試合情報をまとめてDBに挿入
     # また、挿入できたMeetingのレコードのlistを返す

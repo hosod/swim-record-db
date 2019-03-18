@@ -40,3 +40,14 @@ def time_to_str(value):
     else:
         results = str(time)
     return results
+
+
+@register.filter
+def time_disqualification(value):
+    time = decimal.Decimal(value)
+    time = time.quantize(decimal.Decimal('0.01'))
+
+    if time >= 5000.00:
+        return '記録なし'
+    else:
+        return time_to_str(value)
