@@ -40,7 +40,7 @@ table tr:nth-child(odd) {
 
 .content {
     margin-left: 40px;
-    padding-left: 15px;
+    /*padding-left: 15px;*/
 }
 
 h1, h2, h3, h4 {
