@@ -8,10 +8,18 @@
     <link href="https://fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
     <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="{% static 'css/swimrecord.css' %}">
+    <meta name="viewport" content="width=device-width">
 </head>
 <body>
     <div class="page-header">
+        <div id="nav-drawer">
+              <input id="nav-input" type="checkbox" class="nav-unshown">
+              <label id="nav-open" for="nav-input"><span></span></label>
+              <label class="nav-unshown" id="nav-close" for="nav-input"></label>
+              <div id="nav-content">ここに中身を入れる</div>
+        </div>
         <h1><a href="/test">Swim Record DB</a></h1>
+
     </div>
 
     <div>
