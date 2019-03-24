@@ -27,11 +27,13 @@ table{
     width: 100%;
     border-collapse: collapse;
     border-spacing: 0;
+    border: solid 2px #828282;/*表全体を線で囲う*/
 }
 
 table th,table td{
     padding: 10px 0;
     text-align: center;
+    border: dashed 1px #828282;
 }
 
 table tr:nth-child(odd) {
