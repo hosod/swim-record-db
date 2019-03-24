@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="153ed408-ccaa-49e0-ba7c-682a1f7ed6b7" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/swimrecord/templates/swimrecord/_base.html" beforeDir="false" afterPath="$PROJECT_DIR$/swimrecord/templates/swimrecord/_base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/swimrecord.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/swimrecord.css" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -29,8 +29,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/static/css/swimrecord.css">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-284">
-                  <caret line="35" column="31" selection-start-line="35" selection-start-column="31" selection-end-line="35" selection-end-column="31" />
+                <state relative-caret-position="109">
+                  <caret line="29" column="19" selection-start-line="29" selection-start-column="19" selection-end-line="29" selection-end-column="19" />
                 </state>
               </provider>
             </entry>
@@ -193,9 +193,9 @@
         <option value="$PROJECT_DIR$/swimrecord/templates/swimrecord/hamburger.html" />
         <option value="$PROJECT_DIR$/swimrecord/views.py" />
         <option value="$PROJECT_DIR$/swimrecord/templates/swimrecord/swimmer_detail.html" />
-        <option value="$PROJECT_DIR$/static/css/swimrecord.css" />
         <option value="$PROJECT_DIR$/swimrecord/templates/swimrecord/team_list.html" />
         <option value="$PROJECT_DIR$/swimrecord/templates/swimrecord/_base.html" />
+        <option value="$PROJECT_DIR$/static/css/swimrecord.css" />
       </list>
     </option>
   </component>
@@ -345,12 +345,12 @@
       <workItem from="1551786197359" duration="2359000" />
       <workItem from="1552292034535" duration="50147000" />
       <workItem from="1552896722246" duration="8641000" />
-      <workItem from="1553230119674" duration="19351000" />
+      <workItem from="1553230119674" duration="19913000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="80498000" />
+    <option name="totallyTimeSpent" value="81060000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -640,18 +640,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/swimrecord/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="52">
-          <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
+        <state relative-caret-position="180">
+          <caret line="12" column="36" selection-start-line="12" selection-start-column="36" selection-end-line="12" selection-end-column="36" />
           <folding>
             <element signature="e#0#67#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/css/swimrecord.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-284">
-          <caret line="35" column="31" selection-start-line="35" selection-start-column="31" selection-end-line="35" selection-end-column="31" />
         </state>
       </provider>
     </entry>
@@ -679,6 +672,13 @@
             <element signature="n#style#0;n#a#0;n#li#1;n#ul#0;n#div#0;n#div#0;n#li#0;n#ul#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#a#0;n#li#2;n#ul#0;n#div#0;n#div#0;n#li#0;n#ul#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/css/swimrecord.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="109">
+          <caret line="29" column="19" selection-start-line="29" selection-start-column="19" selection-end-line="29" selection-end-column="19" />
         </state>
       </provider>
     </entry>

@@ -27,7 +27,7 @@ table{
     width: 100%;
     border-collapse: collapse;
     border-spacing: 0;
-    border: solid 2px #828282;/*表全体を線で囲う*/
+    border: solid 1px #828282;/*表全体を線で囲う*/
 }
 
 table th,table td{
@@ -41,8 +41,8 @@ table tr:nth-child(odd) {
 }
 
 .content {
-    margin-left: 3%;
-    margin-right: 3%;
+    margin-left: 1%;
+    margin-right: 1%;
     /*padding-left: 15px;*/
 }
 
