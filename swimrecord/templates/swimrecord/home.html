@@ -1,0 +1,77 @@
+{% extends 'swimrecord/_base.html' %}
+{% load staticfiles %}
+{% load custom_filter %}
+
+
+{% block content %}
+    <h2></h2>
+    <form method="get" action="" name="filter_form">
+        <div class="search-label-icon">
+        <label for="name">Search</label>
+        <input type="search"
+               id="name"
+               name="name"
+               placeholder="氏名"
+               value={{ request.GET|name }}
+        >
+        <button id="search">検索</input>
+        </div>
+    </form>
+    <div class="content">
+        <h4>検索結果</h4>
+    <table>
+        <tr>
+            <td>氏名</td>
+            <td>所属</td>
+        </tr>
+        {% for swimmer in object_list %}
+            <tr>
+                <td><a href="{% url 'swimmer_detail' pk=swimmer.pk %}">{{ swimmer }}</a></td>
+                <td><a href="{% url 'team_detail' pk=swimmer.team.pk %}">{{ swimmer.team }}</a></td>
+            </tr>
+        {% endfor %}
+    </table>
+    </div>
+
+    <br><br>
+    <div class="content">
+        <h4>大学ランキング</h4>
+        <table>
+            <tr>
+                <td>順位</td>
+                <td>大学名</td>
+                <td>総合得点</td>
+            </tr>
+            {% for team, point, rank in data_univ %}
+                <tr>
+                    <td>{{ rank }}</td>
+                    <td><a href="{% url 'team_detail' pk=team.pk %}">{{ team }}</a></td>
+                    <td>{{ point }}</td>
+                </tr>
+            {% endfor %}
+        </table>
+    <p>＊リレーは除く</p>
+    <br>
+        <h4>上位選手</h4>
+        <table>
+            <tr>
+                <td>順位</td>
+                <td>氏名</td>
+                <td>所属</td>
+                <td>得点</td>
+            </tr>
+            {% for swimmer, point, rank in data_swimmer %}
+            <tr>
+                <td>{{ rank }}</td>
+                <td><a href="{% url 'swimmer_detail' pk=swimmer.pk %}">{{ swimmer.name }}</a></td>
+                <td><a href="{% url 'team_detail' pk=swimmer.team.pk %}">{{ swimmer.team }}</a></td>
+                <td>{{ point }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    <p>＊出場種目の制限を考慮しない場合</p>
+        <br><br>
+
+    </div>
+{% endblock %}
+

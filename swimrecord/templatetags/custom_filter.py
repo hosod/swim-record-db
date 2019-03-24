@@ -51,3 +51,10 @@ def time_disqualification(value):
         return '記録なし'
     else:
         return time_to_str(value)
+
+
+@register.filter
+def loop_range(ran):
+    return range(ran)
+
+
