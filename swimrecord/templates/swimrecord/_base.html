@@ -13,23 +13,22 @@
 </head>
 <body>
     <div class="page-header">
-        <div id="nav-drawer">
-              <input id="nav-input" type="checkbox" class="nav-unshown">
-              <label id="nav-open" for="nav-input"><span></span></label>
-              <label class="nav-unshown" id="nav-close" for="nav-input"></label>
-              <div id="nav-content">
-                <div class="page-header">
-                    <h2 style="color: white">Menu</h2>
+
+                <div id="nav-drawer">
+                    <input id="nav-input" type="checkbox" class="nav-unshown">
+                    <label id="nav-open" for="nav-input"><span></span></label>
+                    <label class="nav-unshown" id="nav-close" for="nav-input"></label>
+                    <div id="nav-content">
+                        <div class="page-header">
+                            <h2 style="color: white">Menu</h2>
+                        </div>
+                        <ul class="hm_list">
+                            <li><a href="{% url 'team_list' %}" style="font-size: large">大学一覧</a></li>
+                            <li><a href="{% url 'meeting_list' %}" style="font-size: large">大会一覧</a></li>
+                            <li><a href="{% url 'event_list' %}" style="font-size: large">種目別ランキング</a></li>
+                        </ul>
+                    </div>
                 </div>
-                  <ul class="hm_list">
-                      <li><a href="{% url 'team_list' %}" style="font-size: large">大学一覧</a></li>
-                      <li><a href="{% url 'meeting_list' %}" style="font-size: large">大会一覧</a></li>
-                      <li><a href="{% url 'event_list' %}" style="font-size: large">種目別ランキング</a></li>
-                  </ul>
-              </div>
-        </div>
-
-
         <h1><a href="/">Swim Record DB</a></h1>
 
     </div>
