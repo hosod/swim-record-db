@@ -22,11 +22,13 @@
     <table>
         <tr>
             <td>氏名</td>
+            <td>学年</td>
             <td>所属</td>
         </tr>
         {% for swimmer in object_list %}
             <tr>
                 <td><a href="{% url 'swimmer_detail' pk=swimmer.pk %}">{{ swimmer }}</a></td>
+                <td>{{ swimmer.grade }}</td>
                 <td><a href="{% url 'team_detail' pk=swimmer.team.pk %}">{{ swimmer.team }}</a></td>
             </tr>
         {% endfor %}
@@ -57,6 +59,7 @@
             <tr>
                 <td>順位</td>
                 <td>氏名</td>
+                <td>学年</td>
                 <td>所属</td>
                 <td>得点</td>
             </tr>
@@ -64,6 +67,7 @@
             <tr>
                 <td>{{ rank }}</td>
                 <td><a href="{% url 'swimmer_detail' pk=swimmer.pk %}">{{ swimmer.name }}</a></td>
+                <td>{{ swimmer.grade }}</td>
                 <td><a href="{% url 'team_detail' pk=swimmer.team.pk %}">{{ swimmer.team }}</a></td>
                 <td>{{ point }}</td>
             </tr>

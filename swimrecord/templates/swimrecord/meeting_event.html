@@ -18,6 +18,7 @@
     <tr>
         <td>#</td>
         <td>氏名</td>
+        <td>学年</td>
         <td>所属</td>
         <td>記録</td>
     </tr>
@@ -25,6 +26,7 @@
         <tr>
             <td>{{ forloop.counter }}</td>
             <td><a href="{% url 'swimmer_detail' pk=record.swimmer.pk %}">{{ record.swimmer.name }}</a></td>
+            <td>{{ record.swimmer.grade }}</td>
             <td><a href="{% url 'team_detail' pk=record.swimmer.team.pk %}">{{ record.swimmer.team.name }}</a></td>
             <td>{{ record.record|time_disqualification }}</td>
         </tr>

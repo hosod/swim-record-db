@@ -214,7 +214,7 @@ class EventDetailView(DetailView):
 
     def get_context_data(self, **kwargs):
         context = super(EventDetailView, self).get_context_data(**kwargs)
-        data = {}
+        data = dict()
         data['long'] = self.__get_data(is_long=True)
         data['short'] = self.__get_data(is_long=False)
         context['data'] = data
@@ -232,6 +232,7 @@ class EventDetailView(DetailView):
             swimmer = Swimmer.objects.get(name=record['swimmer__name'])
             data.append({'swimmer_name': record['swimmer__name'],
                          'swimmer_pk': swimmer.pk,
+                         'swimmer_grade': swimmer.grade,
                          'team': swimmer.team,
                          'record': record['record__min'],
                          'deviation': deviation

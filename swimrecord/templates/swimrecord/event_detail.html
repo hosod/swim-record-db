@@ -13,6 +13,7 @@
             <tr>
                 <td>順位</td>
                 <td>氏名</td>
+                <td>学年</td>
                 <td>所属</td>
                 <td>記録</td>
                 <td>偏差値</td>
@@ -21,6 +22,7 @@
                 <tr>
                     <td>{{ forloop.counter }}</td>
                     <td><a href="{% url 'swimmer_detail' pk=record.swimmer_pk %}">{{ record.swimmer_name }}</a></td>
+                    <td>{{ record.swimmer_grade }}</td>
                     <td><a href="{% url 'team_detail' pk=record.team.pk %}">{{ record.team.name }}</a></td>
                     <td>{{ record.record|time_to_str }}</td>
                     <td>{{ record.deviation }}</td>
@@ -35,6 +37,7 @@
             <tr>
                 <td>順位</td>
                 <td>氏名</td>
+                <td>学年</td>
                 <td>所属</td>
                 <td>記録</td>
                 <td>偏差値</td>
@@ -43,6 +46,7 @@
                 <tr>
                     <td>{{ forloop.counter }}</td>
                     <td><a href="{% url 'swimmer_detail' pk=record.swimmer_pk %}">{{ record.swimmer_name }}</a></td>
+                    <td>{{ record.swimmer_grade }}</td>
                     <td><a href="{% url 'team_detail' pk=record.team.pk %}">{{ record.team.name }}</a></td>
                     <td>{{ record.record|time_to_str }}</td>
                     <td>{{ record.deviation }}</td>

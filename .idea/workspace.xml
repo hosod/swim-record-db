@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="153ed408-ccaa-49e0-ba7c-682a1f7ed6b7" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/swimrecord/templates/swimrecord/event_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/swimrecord/templates/swimrecord/event_detail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/swimrecord/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/swimrecord/views.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -17,8 +18,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/swimrecord/views.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-408">
-                  <caret line="12" column="36" selection-start-line="12" selection-start-column="36" selection-end-line="12" selection-end-column="36" />
+                <state relative-caret-position="333">
+                  <caret line="237" column="47" lean-forward="true" selection-start-line="237" selection-start-column="47" selection-end-line="237" selection-end-column="47" />
                   <folding>
                     <element signature="e#0#67#0" expanded="true" />
                   </folding>
@@ -35,39 +36,6 @@
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/swimrecord/templates/swimrecord/record_list.html">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="705">
-                  <caret line="47" column="4" selection-start-line="47" selection-start-column="4" selection-end-line="47" selection-end-column="4" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/swimrecord/management/commands/swimmer_upgrade.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="210">
-                  <caret line="15" selection-start-line="15" selection-end-line="15" />
-                  <folding>
-                    <element signature="e#0#51#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/swimrecord/management/commands/swimmer_downngrade.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="210">
-                  <caret line="15" selection-start-line="15" selection-end-line="15" />
-                  <folding>
-                    <element signature="e#0#51#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
         </leaf>
       </split-first>
       <split-second>
@@ -75,7 +43,7 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/swimrecord/urls.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="210">
+                <state relative-caret-position="270">
                   <caret line="18" column="1" selection-start-line="18" selection-start-column="1" selection-end-line="18" selection-end-column="1" />
                   <folding>
                     <element signature="e#0#32#0" expanded="true" />
@@ -85,25 +53,22 @@
             </entry>
           </file>
           <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/swimrecord/views.py">
+            <entry file="file://$PROJECT_DIR$/swimrecord/templates/swimrecord/_base.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-272">
-                  <caret line="20" selection-start-line="20" selection-end-line="20" />
+                <state relative-caret-position="172">
+                  <caret line="18" column="44" selection-start-line="18" selection-start-column="44" selection-end-line="18" selection-end-column="44" />
                   <folding>
-                    <element signature="e#0#67#0" expanded="true" />
+                    <element signature="n#style#0;n#a#0;n#li#0;n#ul#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                   </folding>
                 </state>
               </provider>
             </entry>
           </file>
           <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/swimrecord/templates/swimrecord/_base.html">
+            <entry file="file://$PROJECT_DIR$/swimrecord/templates/swimrecord/event_detail.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="277">
-                  <caret line="25" column="67" selection-end-line="41" selection-end-column="7" />
-                  <folding>
-                    <element signature="n#style#0;n#a#0;n#li#0;n#ul#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                  </folding>
+                <state relative-caret-position="229">
+                  <caret line="39" column="22" selection-start-line="39" selection-start-column="22" selection-end-line="39" selection-end-column="22" />
                 </state>
               </provider>
             </entry>
@@ -203,7 +168,6 @@
         <option value="$PROJECT_DIR$/swimrecord/templates/swimrecord/meeting_event.html" />
         <option value="$PROJECT_DIR$/swimrecord/management/commands/add_meeting.py" />
         <option value="$PROJECT_DIR$/swimrecord/management/commands/lib/Scraper.py" />
-        <option value="$PROJECT_DIR$/swimrecord/templates/swimrecord/event_detail.html" />
         <option value="$PROJECT_DIR$/swimrecord/templates/swimrecord/meeting_list.html" />
         <option value="$PROJECT_DIR$/swimrecord/templates/swimrecord/team_detail.html" />
         <option value="$PROJECT_DIR$/swimrecord/templates/swimrecord/record_list.html" />
@@ -212,13 +176,14 @@
         <option value="$PROJECT_DIR$/swimrecord/urls.py" />
         <option value="$PROJECT_DIR$/swimrecord/templates/swimrecord/test.html" />
         <option value="$PROJECT_DIR$/swimrecord/templates/swimrecord/hamburger.html" />
-        <option value="$PROJECT_DIR$/swimrecord/views.py" />
         <option value="$PROJECT_DIR$/swimrecord/templates/swimrecord/swimmer_detail.html" />
         <option value="$PROJECT_DIR$/swimrecord/templates/swimrecord/team_list.html" />
         <option value="$PROJECT_DIR$/static/css/swimrecord.css" />
         <option value="$PROJECT_DIR$/swimrecord/templates/swimrecord/_base.html" />
         <option value="$PROJECT_DIR$/swimrecord/management/commands/swimmer_upgrade.py" />
         <option value="$PROJECT_DIR$/swimrecord/management/commands/swimmer_downngrade.py" />
+        <option value="$PROJECT_DIR$/swimrecord/views.py" />
+        <option value="$PROJECT_DIR$/swimrecord/templates/swimrecord/event_detail.html" />
       </list>
     </option>
   </component>
@@ -238,6 +203,24 @@
             <path>
               <item name="mysite" type="b2602c69:ProjectViewProjectNode" />
               <item name="mysite" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="mysite" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mysite" type="462c0819:PsiDirectoryNode" />
+              <item name="swimrecord" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="mysite" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mysite" type="462c0819:PsiDirectoryNode" />
+              <item name="swimrecord" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="mysite" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mysite" type="462c0819:PsiDirectoryNode" />
+              <item name="swimrecord" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="swimrecord" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -305,11 +288,12 @@
       <workItem from="1553230119674" duration="21594000" />
       <workItem from="1554089498786" duration="1071000" />
       <workItem from="1555389414726" duration="614000" />
+      <workItem from="1555747785189" duration="474000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="84426000" />
+    <option name="totallyTimeSpent" value="84900000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -322,8 +306,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1602289" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.16237482" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -337,7 +322,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="11" visible="true" weight="0.26024097" />
+      <window_info anchor="bottom" id="Terminal" order="11" visible="true" weight="0.26024097" />
       <window_info anchor="bottom" id="Python Console" order="12" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -490,13 +475,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/swimrecord/templates/swimrecord/event_detail.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="5" selection-start-line="8" selection-start-column="5" selection-end-line="8" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/swimrecord/templates/swimrecord/meeting_list.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-45">
@@ -574,20 +552,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/swimrecord/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="18" column="1" selection-start-line="18" selection-start-column="1" selection-end-line="18" selection-end-column="1" />
-          <folding>
-            <element signature="e#0#32#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/swimrecord/templates/swimrecord/swimmer_detail.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="360">
           <caret line="24" column="16" selection-start-line="23" selection-start-column="29" selection-end-line="24" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/swimrecord/templates/swimrecord/team_list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="22" column="14" selection-start-line="22" selection-start-column="14" selection-end-line="22" selection-end-column="14" />
         </state>
       </provider>
     </entry>
@@ -618,30 +593,40 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/swimrecord/templates/swimrecord/team_list.html">
+    <entry file="file://$PROJECT_DIR$/swimrecord/templates/swimrecord/_base.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="22" column="14" selection-start-line="22" selection-start-column="14" selection-end-line="22" selection-end-column="14" />
+        <state relative-caret-position="172">
+          <caret line="18" column="44" selection-start-line="18" selection-start-column="44" selection-end-line="18" selection-end-column="44" />
+          <folding>
+            <element signature="n#style#0;n#a#0;n#li#0;n#ul#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/swimrecord/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="18" column="1" selection-start-line="18" selection-start-column="1" selection-end-line="18" selection-end-column="1" />
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/swimrecord/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-272">
-          <caret line="20" selection-start-line="20" selection-end-line="20" />
+        <state relative-caret-position="333">
+          <caret line="237" column="47" lean-forward="true" selection-start-line="237" selection-start-column="47" selection-end-line="237" selection-end-column="47" />
           <folding>
             <element signature="e#0#67#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/swimrecord/templates/swimrecord/_base.html">
+    <entry file="file://$PROJECT_DIR$/swimrecord/templates/swimrecord/event_detail.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="277">
-          <caret line="25" column="67" selection-end-line="41" selection-end-column="7" />
-          <folding>
-            <element signature="n#style#0;n#a#0;n#li#0;n#ul#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
+        <state relative-caret-position="229">
+          <caret line="39" column="22" selection-start-line="39" selection-start-column="22" selection-end-line="39" selection-end-column="22" />
         </state>
       </provider>
     </entry>
