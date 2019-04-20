@@ -10,7 +10,7 @@ class Command(BaseCommand):
 
     def handle(self, *args, **options):
         base_url = 'http://www.swim-record.com/swims/ViewResult/?h=V1000&code='
-        scraper = Scraper('2018')
+        scraper = Scraper('2019')
 
         base_url = base_url + options['code']
         scraper.set_meeting(base_url)

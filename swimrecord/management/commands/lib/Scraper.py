@@ -48,11 +48,12 @@ class Scraper:
         date_dt = datetime.datetime.strptime((self.hosted_year + '/' + date_str), '%Y/%m/%d')
         new_year = datetime.datetime(year=int(self.hosted_year), month=4, day=1)
         if new_year > date_dt:
-            date_dt.year = int(self.hosted_year) + 1
+            date_dt = datetime.datetime(year=(int(self.hosted_year) + 1), month=date_dt.month, day=date_dt.day)
+            # date_dt.year = int(self.hosted_year) + 1
         return datetime.date(date_dt.year, date_dt.month, date_dt.day)
 
     # 試合の名前を引数にしてDBに存在するかどうかを返す　
-    @staticmethod
+    @staticmethod  1    
     def __meeting_exists_in_database(meeting_name, date):
         meetings = Meeting.objects.filter(name__exact=meeting_name)
         meetings = Meeting.objects.filter(date=date)
