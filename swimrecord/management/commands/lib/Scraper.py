@@ -53,7 +53,7 @@ class Scraper:
         return datetime.date(date_dt.year, date_dt.month, date_dt.day)
 
     # 試合の名前を引数にしてDBに存在するかどうかを返す　
-    @staticmethod  1    
+    @staticmethod    
     def __meeting_exists_in_database(meeting_name, date):
         meetings = Meeting.objects.filter(name__exact=meeting_name)
         meetings = Meeting.objects.filter(date=date)
